@@ -15,6 +15,15 @@ import Features from "../pages/GetStarted/Features";
 import GuestLayout from "../pages/Forms/GuestLayout";
 import Login from "../pages/Forms/Login";
 import DashMain from "../pages/AppViews/DashMain";
+import Calendar from "../pages/AppViews/Calendar";
+import Payement from "../pages/AppViews/Payement";
+import Request from "../pages/AppViews/AdminRequestPage";
+import Members from "../pages/AppViews/Members";
+import AdminRequestPage from "../pages/AppViews/AdminRequestPage";
+import AddRequest from "../pages/AppViews/AddRequest";
+import Settings from "../pages/AppViews/Settings";
+import Profile from "../pages/AppViews/Profile";
+import Techniciens from "../pages/AppViews/Techniciens";
 
 const router = createBrowserRouter([
     {
@@ -55,34 +64,7 @@ const router = createBrowserRouter([
         }
       ]
     },
-    {
-      path: "/",
-      element: <DefaultLayout />,
-      children: [
-        {
-          path: '/dashboard',
-          element: <DashMain/>
-        },
-        // {
-        //   path: "/",
-        //   element: <Dashboard />,
-        // },
-        
-      ],
-    },
-    {
-      path:'/admin',
-      element:<AdminLayout/>,
-      children: [
-        {
-          path:'/admin/main',
-          element:<DashMain/>
-        }
-      ]
-      
-      
-      
-    },
+    
     {
       element: <GuestLayout />,
       children: [
@@ -96,7 +78,49 @@ const router = createBrowserRouter([
         }
       ]
     },
-   
+    {
+      path:'/',
+      element:<DefaultLayout/>,
+      children: [
+        {
+          path:'/Mainpage',
+          element:<DashMain/>
+        },
+        {
+          path:'/Calendar',
+          element:<Calendar/>
+        },
+        {
+          path:'/Payement',
+          element:<Payement/>
+        },
+        {
+          path:'/Requests',
+          element:<AdminRequestPage/>
+        },
+        {
+          path:'/MakeRequest',
+          element:<AddRequest/>
+        },
+        {
+          path:'/Members',
+          element:<Members/>
+        },
+        {
+          path:'/Techs',
+          element:<Techniciens/>
+        },
+        {
+          path:'Settings',
+          element:<Settings/>
+        },
+        {
+          path:'/Profile',
+          element:<Profile/>
+        }
+      ]
+      
+    },
     
     {
       path:'*',
